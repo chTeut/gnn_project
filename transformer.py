@@ -4,63 +4,55 @@ import numpy as np
 
 from fastai.text.all import *
 
-path = untar_data(URLs.HUMAN_NUMBERS)
+path = untar_data(URLs.IMDB)
+files = get_text_files(path, folders=['train','test','unsup'])
 
-lines=L()
-with open(path/'train.txt') as f: lines+=L(*f.readlines())
-with open(path/'valid.txt') as f: lines+=L(*f.readlines())
+#print(len(files))
 
-text = ' . '.join([l.strip() for l in lines])
+txt = files[0].open().read()
 
-tokens = text.split(' ')
+spacy = WordTokenizer()
+toks = first(spacy([txt]))
 
-vocab = L(*tokens).unique()
+tkn = Tokenizer(spacy)
 
-word2idx = {w:i for i,w in enumerate(vocab)}
-nums = L(word2idx[i] for i in tokens)
+txts = L(o.open().read() for o in files[:2])
 
-def group_chunks(ds, bs):
-    m = len(ds) // bs
-    new_ds = L()
-    for i in range(m): new_ds += L(ds[i + m*j] for j in range(bs))
-    return new_ds
+print(txts[0])
 
-bs = 64
-sl = 16
-#seqs = L((tensor(nums[i:i+sl]), tensor(nums[i+1:i+sl+1])) for i in range(0,len(nums)-sl-1,sl))
-seqs = L(tensor(nums[i:i+sl], dtype=torch.float32) for i in range(0,len(nums)-sl-1,sl))
+toks = tkn(txt)
 
-cut = int(len(seqs) * 0.8)
-dls = DataLoaders.from_dsets(group_chunks(seqs[:cut], bs),
-                             group_chunks(seqs[cut:], bs),
-                             bs=bs, drop_last=True, shuffle=False)
+toks200 = txts[:2].map(tkn)
 
-"""class LMModel4(Module):
-    def __init__(self, vocab_sz, n_hidden):
-        self.i_h = nn.Embedding(vocab_sz, n_hidden)
-        self.h_h = nn.Linear(n_hidden, n_hidden)
-        self.h_o = nn.Linear(n_hidden, vocab_sz)
-        self.h = 0
-    
-    def forward(self, x):
-        outs = []
-        #print(x)
-        for i in range(sl):
-            self.h = self.h + self.i_h(x[:,i])
-            self.h = F.relu(self.h_h(self.h))
-            outs.append(self.h_o(self.h))
-        self.h = self.h.detach()
-        return torch.stack(outs, dim=1)
-    
-    def reset(self): self.h = 0
-    
-def loss_func(inp, targ):
-    return F.cross_entropy(inp.view(-1, len(vocab)), targ.view(-1))
+num = Numericalize()
+num.setup(toks200)
+coll_repr(num.vocab,20) 
 
-learn = Learner(dls,LMModel4(len(vocab), 64), loss_func=loss_func,
-                metrics=accuracy, cbs=ModelResetter)
+nums = num(toks)[:20]
 
-learn.fit_one_cycle(5, 3e-3)"""
+nums200 = toks200.map(num)
+
+print(nums200[0])
+
+dl = LMDataLoader(nums200)
+
+x,y = first(dl)
+
+print(x.shape, y.shape)
+
+get_imdb = partial(get_text_files,folders=['train','test','unsup'])
+
+dls_lm = DataBlock(
+    blocks=TextBlock.from_folder(path, is_lm=True),
+    get_items=get_imdb, splitter=RandomSplitter(0.1)
+).dataloaders(path, path=path, bs=128, seq_len=80)
+
+dls_lm.show_batch(max_n=2)
+print(dls_lm)
+
+"""for data in dls_lm:
+    print(data)
+    break"""
 
 # Attention mechanism 
 # attention_weight = softmax(QK/sqrt(dk))
@@ -89,58 +81,11 @@ class AttentionHead(Module):
 
     def reset(self): pass
     
-def loss_func(inp, targ):
-    return F.cross_entropy(inp.view(-1, len(vocab)), targ.view(-1))
+attention = AttentionHead(72,72)
+pred = attention(nums200[0])
 
-attention = AttentionHead(len(seqs[0]), len(seqs[0]))
-value = attention(seqs[0])
+learn = language_model_learner(
+    dls_lm, attention, drop_mult=0.3,
+    metrics=[accuracy,Perplexity()]
+).to_fp16()
 
-print(value)
-
-learn = Learner(dls,AttentionHead(len(vocab), 64), loss_func=loss_func,
-                metrics=accuracy, cbs=ModelResetter)
-
-learn.fit_one_cycle(5, 3e-3)
-
-"""q = torch.tensor([1,2,3],dtype=torch.float32).unsqueeze(0)
-k = torch.tensor([1,2,3],dtype=torch.float32).unsqueeze(0)
-v = torch.tensor([1,2,3],dtype=torch.float32).unsqueeze(0)
-
-attention = AttentionHead(3,3)
-value = attention(q,k,v)
-
-print(value)
-"""
- 
-"""class AttentionHead(nn.Module):
-    def __init__(self, input_dim, hidden_dim):
-        super(AttentionHead, self).__init__()
-        self.input_dim = input_dim
-        self.hidden_dim = hidden_dim
-        self.query = torch.nn.Linear(input_dim, hidden_dim)
-        self.key = torch.nn.Linear(input_dim, hidden_dim)
-        self.value = torch.nn.Linear(input_dim, hidden_dim)
-
-    def forward(self, q, k, v):
-        query = self.query(q)
-        key = self.key(k)
-        value = self.value(v)
-        
-        k_transposed = key.transpose(0,1)  
-        attention_value = torch.softmax(query.mm(k_transposed)/torch.sqrt(torch.tensor(query.shape[1], dtype=torch.float32)), dim=1)
-        
-        return attention_value * value  
-        
-    
-q = torch.tensor([1,2,3],dtype=torch.float32).unsqueeze(0)
-k = torch.tensor([1,2,3],dtype=torch.float32).unsqueeze(0)
-v = torch.tensor([1,2,3],dtype=torch.float32).unsqueeze(0)
-
-attention = AttentionHead(3,3)
-value = attention(q,k,v) 
-
-print(value)"""
-
-
-
-  
