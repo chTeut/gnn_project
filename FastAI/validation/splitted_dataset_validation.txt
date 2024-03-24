@@ -1,0 +1,20 @@
+ssh root@ec
+ssh root@ec2-34-213-171
+ssh root@ec2-34-213-171-127.us-west
+ssh root@ec2-34-213-171-127.us-west-2.compute.a
+sudo 
+sudo apt-ge
+sudo apt-get ins
+sudo apt-get install -
+cp .vi
+cp .vimrc /e
+cp .vimrc /etc/vim
+cp .vimrc /etc/vim/vimrc
+git p
+git push -
+git push -u ori
+git push -u origin m
+pip install
+pip install scipy sklea
+pip install scipy sklearn matplotl
+pip install scipy sklearn matplotlib seaborn p
