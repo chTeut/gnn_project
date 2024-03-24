@@ -1,0 +1,20 @@
+xxbos ssh xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos ssh xxunk - 34 - xxunk - xxunk xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. /
+xxbos ssh xxunk - 34 - xxunk - xxunk - xxunk - xxunk xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. /
+xxbos ssh xxunk - 34 - xxunk - xxunk - xxunk - xxunk xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. /
+xxbos sudo apt - get install python - get install python - dev / etc / init.d / init.d / init.d /
+xxbos sudo apt - xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos sudo apt - get ins xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos sudo apt - get install - get install python - dev / etc / init.d / init.d / init.d / init.d / init.d / init.d /
+xxbos cp xxunk xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. xxbos cd .. xxbos cd
+xxbos cp .vimrc / e / xxbos cd .. / xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd ..
+xxbos cp .vimrc / etc / vim / hosts xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd ..
+xxbos cp .vimrc / etc / vim / vimrc / hosts xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd ..
+xxbos git p xxbos git add . / configure xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd
+xxbos git push - xxunk xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd ..
+xxbos git push -u xxunk xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. /
+xxbos git push -u origin m localhost xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd .. / xxbos cd ..
+xxbos pip install xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos pip install scipy xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos pip install scipy sklearn xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos pip install scipy sklearn matplotlib xxunk p xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
