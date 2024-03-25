@@ -1,0 +1,5 @@
+ssh root@ec2-34-213-171-127.us-west-2.compute.amazonaws.com
+sudo apt-get install -y curl
+cp .vimrc /etc/vim/vimrc.local
+git push -u origin master
+pip install scipy sklearn matplotlib seaborn pandas plotly 

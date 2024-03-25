@@ -1,0 +1,20 @@
+xxbos ssh xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos ssh xxunk - 34 - xxunk - xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos ssh xxunk - 34 - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk
+xxbos ssh xxunk - 34 - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk - xxunk
+xxbos sudo apt - get install python - dev xxbos sudo apt - get install python - get install python - dev
+xxbos sudo apt - xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos sudo apt - get ins xxbos sudo apt - get install python - get install python - dev xxbos sudo apt - get install python
+xxbos sudo apt - get install - dev xxbos sudo apt - get install python - dev xxbos sudo apt - get install python - get install
+xxbos cp xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos cp .vimrc / e / usr / share / share / share / share / share / share / share / share / share
+xxbos cp .vimrc / etc / vim / hosts xxbos sudo apt - get install python manage.py migrate xxbos sudo apt - get install python manage.py migrate
+xxbos cp .vimrc / etc / vim / vimrc / hosts xxbos sudo apt - get install python manage.py migrate xxbos sudo apt - get install python manage.py migrate
+xxbos git p xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos git push - xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos
+xxbos git push -u xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos git push -u origin m localhost xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos
+xxbos pip install xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos pip install scipy xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos pip install scipy sklearn xxunk xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
+xxbos pip install scipy sklearn matplotlib xxunk p xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd .. xxbos cd
